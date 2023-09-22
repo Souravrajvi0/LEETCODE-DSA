@@ -8,7 +8,7 @@ public:
         int high=n;
         int mid;
         int ver=0;
-        while(low<=high){
+        while(low<=high){ 
 
         mid= low+(high-low)/2;
         bool T= isBadVersion(mid);
@@ -21,6 +21,7 @@ public:
             }
         
     }
+        
     return ver;
     }
 
