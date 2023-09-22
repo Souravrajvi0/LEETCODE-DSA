@@ -17,10 +17,7 @@ public:
             }
             
             }
-            if(isBadVersion(low)&&low==high){
-              return low;
-            }
-        return -1;
+            return low;
     
      
     
