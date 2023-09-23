@@ -4,20 +4,23 @@ public:
         int low=0;
         int high=arr.size()-1;
         int mid;
-        int index=-1;
-        while(low<=high){
-          mid=low+(high-low)/2;
-          
-          if(arr[mid]<arr[mid+1]){
-              low=mid+1;
-          }else{
-              index=mid;
-              high=mid-1;
+       while(low<high){
 
-          }
+       mid=low+(high-low)/2;
+       if(arr[mid]<arr[mid+1]){
+         low=mid+1;
+       }else{
+           high=mid;
+       }
 
-         }
-         return index;
+
+
+
+
+
+
+       }
+       return low;
         
     }
 };
