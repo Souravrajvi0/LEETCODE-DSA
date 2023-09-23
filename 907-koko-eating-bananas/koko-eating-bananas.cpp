@@ -7,10 +7,9 @@ public:
                hr++;
                continue;
               }
-              long long int a=piles[i]+mid-1;
-                     a=a/mid;
               
-                hr+=a;
+              
+                hr+=(piles[i]+mid-1)/mid;
                 
            
 
