@@ -53,8 +53,7 @@ public:
          headB=headB->next;
      }
      return headA;
-
-
+   /// kya haal hai
         
     }
 };
