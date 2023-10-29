@@ -14,21 +14,21 @@ public:
      if(root==NULL){
          return root;
      }
-     if(p==root||q==root){
+     if(p->val==root->val||q->val==root->val){
          return root;
      }
      TreeNode*temp1=lowestCommonAncestor(root->left,p,q);
      TreeNode*temp2=lowestCommonAncestor(root->right,p,q);        
-
+     if(temp1==NULL&&temp2==NULL){
+         return NULL;
+     }
      if(temp1==NULL&&temp2!=NULL){
          return temp2;
      }
      if(temp1!=NULL&&temp2==NULL){
          return temp1;
      }
-     if(temp1==NULL&&temp2==NULL){
-        return NULL;
-     }
+     
 
      return root;
 
