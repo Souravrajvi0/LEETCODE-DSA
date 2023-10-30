@@ -19,18 +19,16 @@ public:
             return root;
         }
         if(root->val>val){
-         TreeNode*temp= searchBST(root->left,val);
-         if(temp!=NULL){
-          return temp;
-         }
+         return searchBST(root->left,val);
+         
+         
         }else{
-         TreeNode*temp1= searchBST(root->right,val);
-         if(temp1!=NULL){
-          return temp1;
+         return searchBST(root->right,val);
+         
          }
-
+         return NULL;
         }
-        return NULL;
         
-    }
+        
+    
 };
