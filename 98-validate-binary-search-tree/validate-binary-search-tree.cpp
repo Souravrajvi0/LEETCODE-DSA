@@ -11,59 +11,33 @@
  */
 class Solution {
 public:
-    bool checkmin (TreeNode* root,int key){
-          if(root==NULL){
-            return true;
-        }
-        if(root->val<=key){
-            return false;
-        }
-        bool t=checkmin(root->left,key);
-        bool r=checkmin(root->right,key);
-        if(t==false||r==false){
-            return false;
-        }
-        return true;
+
+     bool check(TreeNode*root,long long int lb,long long int ub){
+         if(root==NULL){
+             return true;
+         }
+          
+          if(root->val>lb&&root->val<ub){
+          bool lt=check(root->left,lb,root->val);
+          bool rt=check(root->right,root->val,ub);
+          
+          return lt&&rt;
+
+            
+
+
+
+          }else{
+            return false;  
+          }
+          
         
-
-    }
-    bool checkmax (TreeNode* root,int key){
-        if(root==NULL){
-            return true;
-        }
-        if(root->val>=key){
-            return false;
-        }
-        bool t=checkmax(root->left,key);
-        bool r=checkmax(root->right,key);
-        if(t==false||r==false){
-            return false;
-        }
-        return true;
-
-
-
-    }
-    
-    bool isValidBST(TreeNode* root) {
-        if(root==NULL){
-            return true;
-        }
-       bool l=checkmax(root->left,root->val);
-       bool r=checkmin(root->right,root->val);
-       if(l==false||r==false){
-           return false;
-       }
-       bool lt= isValidBST(root->left);
-       bool rt= isValidBST(root->right);
-       if(lt==false||rt==false){
-           return false;
-       }
-       return true;
-
-
-     
-
         
-    }
+  }
+ bool isValidBST(TreeNode* root) {
+        long long int lb=-1000000000000;
+        long long  int ub=1000000000000;
+        return check(root,lb,ub);
+        
+}
 };
