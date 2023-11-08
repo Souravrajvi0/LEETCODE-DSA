@@ -28,7 +28,7 @@ public:
         vector<vector<int>>res;
         vector<int>cur;
         gen(0,n,nums,res,cur);
-        sort(res.begin(),res.end());
+        
         return res;
     }
 };
