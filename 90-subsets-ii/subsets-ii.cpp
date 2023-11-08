@@ -3,7 +3,7 @@ public:
 void gen(int i,int n,vector<int>& nums,vector<vector<int>>&res, vector<int>&cur){
     if(i>=n){
         bool k=true;
-       sort(cur.begin(),cur.end());
+     
        for(int i=0;i<res.size();i++){
            if(res[i]==cur){
             k=false;
