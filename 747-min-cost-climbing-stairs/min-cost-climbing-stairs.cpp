@@ -2,8 +2,7 @@ class Solution {
 public:
 
     int findmin(vector<int>& cost,int i,vector<int>& dp){
-        if(i==0)return cost[0];
-        if(i==1)return cost[1];
+        if(i==0||i==1)return cost[i];
         if(dp[i]!=-1)return dp[i];
 
         int sumofchoice1=cost[i]+findmin(cost,i-1,dp);
