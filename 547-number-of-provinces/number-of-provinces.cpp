@@ -1,33 +1,35 @@
 class Solution {
 public:
-    void bfs(vector<vector<int>>& isConnected,vector<int>&vis,int start){
+   void bfs(vector<vector<int>>& ic,vector<int>&vis,int startv){
+    vis[startv]=1;
     queue<int>q;
-    vis[start]=1;
-    q.push(start);
+    q.push(startv);
 
     while(!q.empty()){
-    int vertex=q.front();
-    q.pop();
+      int vertex=q.front();
+      q.pop();
 
-    for(int i=0;i<isConnected.size();i++){
-     if(isConnected[vertex][i]==1&&!vis[i]){
-        vis[i]=1;
-        q.push(i);
-     }
+      for(int j=0;j<ic.size();j++){
+      if(vertex==j)continue;
+      if(ic[vertex][j]==1&&!vis[j]){
+        vis[j]=1;
+        q.push(j);
+      }
     }
-    }
+}
   }
-    int findCircleNum(vector<vector<int>>& isConnected) {
-    int V=isConnected.size();
-    vector<int>vis(V,0);
-    int count=0;
 
-    for(int i=0;i<V;i++){
-        if(!vis[i]){
-           count++;
-           bfs(isConnected,vis,i);
-        }
-    }
-     return count;
- }
+        int findCircleNum(vector<vector<int>>& ic) {
+        int n=ic.size();
+        vector<int>vis(n,0);
+        int count=0;
+
+        for(int i=0;i<n;i++){
+          if(!vis[i]){
+            count++;
+            bfs(ic,vis,i);
+          }
+         } 
+    return count;
+}
 };
