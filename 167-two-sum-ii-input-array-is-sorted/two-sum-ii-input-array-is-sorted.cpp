@@ -6,7 +6,6 @@ public:
         int right=numbers.size()-1;
         while(left<right){
         int value=numbers[left]+numbers[right];
-        //int mid=left+(right-left)/2;
         if(value<target){
             left++;
         }else if(value>target){
