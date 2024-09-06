@@ -1,6 +1,8 @@
 class Solution {
 public:
     int numRescueBoats(vector<int>& people, int limit) {
+        std::ios_base::sync_with_stdio(false);
+
         sort(people.begin(),people.end());
         int low =0;
         int high=people.size()-1;
