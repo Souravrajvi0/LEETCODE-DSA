@@ -1,10 +1,8 @@
 class Solution {
 public:
     int largestSumAfterKNegations(vector<int>& nums, int k) {
-        priority_queue<int,vector<int>,greater<int>>minhp;
-        for(int i=0;i<nums.size();i++){
-            minhp.push(nums[i]);
-        }
+        priority_queue<int,vector<int>,greater<int>>minhp(nums.begin(),nums.end());
+       
         while(k>0){
             int small=minhp.top();
             minhp.pop();
