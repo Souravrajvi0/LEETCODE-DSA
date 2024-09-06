@@ -1,22 +1,22 @@
 class Solution {
 public:
     int numRescueBoats(vector<int>& people, int limit) {
-        std::ios_base::sync_with_stdio(false);
-
-        sort(people.begin(),people.end());
-        int low =0;
-        int high=people.size()-1;
-        int boats=0;
-        while(low<=high){
-        if(people[low]+people[high]<=limit){
-            low++;
-            boats++;
-            high--;
-        }else {
-           boats++;
-           high--;
-         }
-       }
-       return boats;
+        ios_base::sync_with_stdio(false); 
+        cin.tie(nullptr); 
+        cout.tie(nullptr);
+        int ans = 0;
+        sort(people.begin() , people.end());
+        int left = 0 , right = people.size() - 1;
+        while(left <= right){
+            if(people[left] + people[right] <= limit){
+                ans ++;
+                left++;
+                right--;
+            } else {
+                ans ++;
+                right--;
+            }
+        }
+        return ans;
     }
 };
