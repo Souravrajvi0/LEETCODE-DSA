@@ -12,10 +12,10 @@ class Solution {
 public:
     ListNode*help(ListNode*Node){
     if(Node==NULL||Node->next==NULL)return Node;
-    ListNode*newhead=help(Node->next);
+    ListNode*newHead=help(Node->next);
     Node->next->next=Node;
     Node->next=NULL;
-    return newhead;
+    return newHead;
    }
   ListNode* reverseList(ListNode* head) {
     return help(head);
