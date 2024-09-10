@@ -9,13 +9,13 @@ public:
             sf[i]=sf[i+1]+s[i];
         }
         int time=1;
-        int lti=0;
+        int liketimec=0;
        for(int i=0;i<n;i++){
         if(sf[i]<0)continue;
-        lti+=time*s[i];
+        liketimec+=time*s[i];
         time++;
         }
-        return lti;
+        return liketimec;
         
     }
 };
