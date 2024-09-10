@@ -10,55 +10,38 @@
  */
 class Solution {
 public:
-     ListNode* findmid(ListNode* head){
-         ListNode* slow=head;
-         ListNode*fast=head;
-         while(fast!=NULL){
-             fast=fast->next;
-             if(fast!=NULL){
-                 fast=fast->next;
-                 slow=slow->next;
-             }
-         }
-         return slow;
-     }
-    
     bool isPalindrome(ListNode* head) {
-        if(head==NULL){
-            return true;
+        if(head==NULL)return false;
+        if(head->next==NULL)return true;
+        ListNode*mid=head;
+        ListNode*fast=head;
+        while(fast&&fast->next){
+            mid=mid->next;
+            fast=fast->next->next;
         }
-        if(head->next==NULL){
-            return true;
+        // reversing the linked list
+        ListNode*prev=NULL;
+         ListNode*temp;
+        if(fast==NULL){
+        temp=mid;
+        }else{
+        temp=mid->next;
         }
-       
-   ListNode*temp=findmid(head);
-
-   ListNode*prev=NULL;
-   ListNode*curr=temp;
-
-   while(curr!=NULL){
-       ListNode*f=curr->next;
-       curr->next=prev;
-       prev=curr;
-       curr=f;
-   }
-   ListNode*temp1=head;
-   while(temp1->next->next!=NULL){
-       temp1=temp1->next;
-   }
-   temp1->next=prev;
-
-   ListNode*l1=head;
-   ListNode*l2=prev;
-   while(l1!=prev){
-       if(l1->val!=l2->val){
-           return false;
-       }
-       l1=l1->next;
-       l2=l2->next;
-       
-   }
-   return true;;
-
-}
+        while(temp){
+            ListNode*nextNode=temp->next;
+            temp->next=prev;
+            prev=temp;
+            temp=nextNode;
+        }
+        temp=head;
+        while(prev){
+            if(prev->val!=temp->val){
+                return false;
+            }
+            prev=prev->next;
+            temp=temp->next;
+        }
+        return true;
+        
+    }
 };
