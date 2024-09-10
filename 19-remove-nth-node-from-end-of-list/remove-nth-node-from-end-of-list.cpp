@@ -25,6 +25,9 @@ public:
             temp1=temp1->next;
         }
         if(temp1==head&&n==1)return NULL;
+        // temp1 is always going to be at the end 
+        // temp2 will be at the node which is going to get deleted
+        // Since we're always trying to find the node that is behind the temp2 so if temp2 is at the head then prev is going to be null
         if(temp2==head){
             head=head->next;
             return head;
