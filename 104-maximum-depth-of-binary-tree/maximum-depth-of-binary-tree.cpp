@@ -12,16 +12,13 @@
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
-        if(root==NULL){
-            return 0;
-        }
-        int l=maxDepth(root->left);
-        int r=maxDepth(root->right);
-        if(l>r){
-            return l+1;
-        }
-        return r+1;
+        if(root==NULL)return 0;
 
-        
+        int lh=maxDepth(root->left);
+        int rh=maxDepth(root->right);
+        if(lh>rh){
+            return lh+1;
+        }
+        return rh+1;
     }
 };
