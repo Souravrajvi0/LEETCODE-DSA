@@ -6,30 +6,21 @@ public:
         int j=0;
         int k=0;
         while(i<m&&j<n){
-            int ele1=nums1[i];
-            int ele2=nums2[j];
-            if(ele1<=ele2){
-                res[k]=ele1;
-                i++;
+            if(nums1[i]<=nums2[j]){
+                res[k++]=nums1[i++];
             }else{
-                res[k]=ele2;
-                j++;
+                res[k++]=nums2[j++];
             }
-            k++;
         }
         if(i==m){
             while(j<n){
-                res[k]=nums2[j];
-                j++;
-                k++;
+                res[k++]=nums2[j++];
             }
         }else{
              while(i<m){
-                res[k]=nums1[i];
-                i++;
-                k++;
+                res[k++]=nums1[i++];
             }
         }
-        nums1=res;
+       nums1=res;
     }
 };
