@@ -2,7 +2,7 @@ class Solution {
 public:
     int rev(int num){
      int reversed = 0;
-        while (num > 0) {
+        while (num) {
             int last = num % 10;
             reversed = reversed * 10 + last;
             num /= 10;
