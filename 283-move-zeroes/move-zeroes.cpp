@@ -9,7 +9,7 @@ public:
         for(;i<n;i++){
            if(nums[i]==0)break;
         }
-        if(i==n-1||i==n)return;
+        //if(i==n-1||i==n)return;
         int j=i+1;
         for(;j<n;j++){
             if(nums[j]!=0){
