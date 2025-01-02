@@ -20,7 +20,7 @@ public:
 
 
     int maxDepth(TreeNode* root) {
-        if(!root)return 0;
-        return max(height(root->left),height(root->right))+1;
+        //return max(height(root->left),height(root->right))+1;
+        return height(root);
     }
 };
