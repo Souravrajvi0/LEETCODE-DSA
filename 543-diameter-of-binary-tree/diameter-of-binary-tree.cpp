@@ -16,7 +16,7 @@ public:
         int lefth = maxDepth(root->left,diameter);
         int righth = maxDepth(root->right,diameter);
         if(lefth+righth+1>diameter){
-            diameter=lefth+righth+1;
+            diameter=lefth+righth;
         }
         return max(lefth,righth)+1;
     }
@@ -25,7 +25,7 @@ public:
     int diameterOfBinaryTree(TreeNode* root) {
         int diameter =0;
         int h=maxDepth(root,diameter);
-        return diameter-1;
+        return diameter;
 
         
     }
