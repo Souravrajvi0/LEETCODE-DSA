@@ -22,7 +22,7 @@ public:
    }
 
     int maxPathSum(TreeNode* root) {
-    int random=helper(root);
+    helper(root);
     return maxsum;
     }
 };
