@@ -1,9 +1,7 @@
 class Solution {
 public:
    bool isPrefixAndSuffix(string s1, string s2){
-    if(s1.size()>s2.size()){
-        return false;
-    }
+   
     if(s2.compare(0,s1.size(),s1)!=0){
     return false;
     } 
