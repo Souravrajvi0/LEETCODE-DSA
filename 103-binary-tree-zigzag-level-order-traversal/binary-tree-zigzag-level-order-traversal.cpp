@@ -21,18 +21,15 @@ public:
     bool flag=true;
     while(!q.empty()){
      int levelSize = q.size();
-     vector<int>level;
+     vector<int>level(levelSize);
      
      for(int i = 0; i < levelSize; i++){
         TreeNode*temp=q.front();
         q.pop();
+        int index = (flag) ?  i : (levelSize-i-1);
+        level[index]=temp->val;
         if(temp->left)q.push(temp->left);
         if(temp->right)q.push(temp->right);
-        if(flag){
-            level.push_back(temp->val);
-        }else{
-            level.insert(level.begin(),temp->val);
-        }
     }
     flag=!flag;
     ans.push_back(level);
